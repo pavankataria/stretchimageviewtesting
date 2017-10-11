@@ -17,6 +17,7 @@ public class TitleView: UIView {
         return label
     }()
     
+    var edgeInsets: UIEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
     public override init(frame: CGRect) {
         super.init(frame: frame)
         inintialise()
@@ -29,7 +30,7 @@ public class TitleView: UIView {
     private func inintialise() {
         backgroundColor = .red
         addSubview(label)
-        self.label.fillSuperview()
+        self.label.fillSuperview(with: edgeInsets)
     }
 }
 

@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func fillSuperview() {
+    func fillSuperview(with insets: UIEdgeInsets = .zero) {
         guard let superview = self.superview else {
             return print("no superview")
         }
-        topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
-        leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
-        rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
+        topAnchor.constraint(equalTo: superview.topAnchor, constant: insets.top).isActive = true
+        leftAnchor.constraint(equalTo: superview.leftAnchor, constant: insets.left).isActive = true
+        bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -insets.bottom).isActive = true
+        rightAnchor.constraint(equalTo: superview.rightAnchor, constant: -insets.right).isActive = true
     }
 }
 
